@@ -17,11 +17,23 @@ let cSelect = compPlay();
 function playRound(pSelect, cSelect) {
     if (pSelect == 'rock' & cSelect == 'rock'){
         return 'Tie'
-    }
-    if (pSelect == 'rock' & cSelect == 'paper'){
+    } else if (pSelect == 'rock' & cSelect == 'paper'){
         return 'Lose'
-
+    } else if (pSelect == 'rock' & cSelect == 'scissor'){
+        return 'Win'
+    } else if (pSelect=='paper' & cSelect=='rock'){
+        return 'Win'
+    } else if (pSelect=='paper' & cSelect=='paper'){
+        return 'Tie'
+    } else if (pSelect=='paper' & cSelect=='scissor'){
+        return 'Lose'
+    } else if (pSelect== 'scissor' & cSelect=='rock'){
+        return 'Lose'
+    } else if (pSelect=='scissor' & cSelect=='paper'){
+        return 'Win'
+    } else if (pSelect=='scissor'&cSelect=='sissor') {
+        return 'Tie'
     }
-
 
 }
+console.log(playRound(pSelect, cSelect))
