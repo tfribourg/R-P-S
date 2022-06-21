@@ -1,11 +1,10 @@
  // variables for keeping score
  
- const myScore = 0
- const cpuScore = 0 
+ const myScore = 0;
+ const cpuScore = 0 ;
  //play choice
  
- pSelect = prompt('what is your choice?');
- pSelect = pSelect.toLowerCase();
+
  
 //comp choices
 
@@ -19,7 +18,7 @@ function compPlay(){
 
 //main game function
 function playRound(pSelect, cSelect) {
-    
+    console.log(pSelect, cSelect)
     if (pSelect == 'rock' & cSelect == 'rock'){
         return 'Tie'
     } else if (pSelect == 'rock' & cSelect == 'paper'){
@@ -49,15 +48,21 @@ function playRound(pSelect, cSelect) {
 
 
 //global variable for comp choice
-const cSelect = compPlay();
-const pSelect = 'rock'
-console.log(playRound(pSelect, cSelect))
+
+//const pSelect = 'rock';
+
 
 //game function loop
 
 const game = () =>{
-    for(let i=0; i<5; i++)
+    for(let i=0; i<5; i++){
+        const cSelect = compPlay();
+        pSelect = prompt('what is your choice?');
+        pSelect = pSelect.toLowerCase();
+        console.log(playRound(pSelect, cSelect))
+    }
 }
+game()
 
 
     
