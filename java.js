@@ -1,7 +1,7 @@
  // variables for keeping score
  
- const myScore = 0;
- const cpuScore = 0 ;
+ let myScore = 0;
+ let cpuScore = 0 ;
  //play choice
  
 
@@ -22,23 +22,26 @@ function playRound(pSelect, cSelect) {
     if (pSelect == 'rock' & cSelect == 'rock'){
         return 'Tie'
     } else if (pSelect == 'rock' & cSelect == 'paper'){
+        cpuScore +=1;
         return 'Lose'
     } else if (pSelect == 'rock' & cSelect == 'scissor'){
+        myScore +=1;
         return 'Win'
     } else if (pSelect=='paper' & cSelect=='rock'){
+        myScore+=1;
         return 'Win'
     } else if (pSelect=='paper' & cSelect=='paper'){
+
         return 'Tie'
     } else if (pSelect=='paper' & cSelect=='scissor'){
+        cpuScore +=1;
         return 'Lose'
     } else if (pSelect== 'scissor' & cSelect=='rock'){
         cpuScore +=1;
-        return 'Lose';
-        
+        return 'Lose';  
     } else if (pSelect=='scissor' & cSelect=='paper'){
-        myScore ++
+        myScore +=1;
         return 'Win' ; 
-        
     } else if (pSelect=='scissor'&cSelect=='sissor') {
         return 'Tie'; 
         
@@ -60,6 +63,7 @@ const game = () =>{
         pSelect = prompt('what is your choice?');
         pSelect = pSelect.toLowerCase();
         console.log(playRound(pSelect, cSelect))
+        console.log('User Score- '+myScore+ ' CPU Score-  '+cpuScore)
     }
 }
 game()
