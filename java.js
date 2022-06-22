@@ -18,8 +18,10 @@ function compPlay(){
 
 //main game function
 function playRound(pSelect, cSelect) {
-    console.log(pSelect, cSelect)
-    if (pSelect == 'rock' & cSelect == 'rock'){
+    console.log(pSelect +' v ' + cSelect)
+
+    if (pSelect == cSelect){
+        cpuScore +=1; myScore+=1;
         return 'Tie'
     } else if (pSelect == 'rock' & cSelect == 'paper'){
         cpuScore +=1;
@@ -30,10 +32,7 @@ function playRound(pSelect, cSelect) {
     } else if (pSelect=='paper' & cSelect=='rock'){
         myScore+=1;
         return 'Win'
-    } else if (pSelect=='paper' & cSelect=='paper'){
-
-        return 'Tie'
-    } else if (pSelect=='paper' & cSelect=='scissor'){
+    } if (pSelect=='paper' & cSelect=='scissor'){
         cpuScore +=1;
         return 'Lose'
     } else if (pSelect== 'scissor' & cSelect=='rock'){
@@ -42,17 +41,14 @@ function playRound(pSelect, cSelect) {
     } else if (pSelect=='scissor' & cSelect=='paper'){
         myScore +=1;
         return 'Win' ; 
-    } else if (pSelect=='scissor'&cSelect=='sissor') {
-        return 'Tie'; 
+    }  
         
     }
 
-}
 
 
-//global variable for comp choice
 
-//const pSelect = 'rock';
+
 
 
 //game function loop
@@ -65,10 +61,15 @@ const game = () =>{
         console.log(playRound(pSelect, cSelect))
         console.log('User Score- '+myScore+ ' CPU Score-  '+cpuScore)
     }
+    if (myScore > cpuScore){
+        console.log('WEENER')
+    } else if (myScore < cpuScore){
+        console.log('LOSER')
+    }
 }
 game()
 
 
     
-
+ 
 
